@@ -188,6 +188,15 @@ a {
   pointer-events: none;
 }
 
+.hero::after {
+  inset: 0;
+  background: url('assets/picture2.png') center / cover no-repeat;
+  opacity: 0.18;
+  filter: blur(2px) contrast(0.9);
+  mix-blend-mode: luminosity;
+  animation: float-image 18s ease-in-out infinite;
+}
+
 .hero::before {
   width: 180px;
   height: 180px;
@@ -245,6 +254,7 @@ h1 {
 .hero-title {
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 800;
+  font-style: italic;
   line-height: 1.02;
   margin: 0;
   font-size: clamp(2.25rem, 5vw, 3.75rem);
@@ -568,9 +578,9 @@ h3 {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)),
     #2563eb;
-  position: relative;
   transition: transform 0.28s ease;
 }
+
 
 .project-preview::before {
   content: "";
@@ -600,16 +610,36 @@ h3 {
   transform: translateY(-6px) scale(1.02);
 }
 
-.project-card:hover .project-card::before {
-  opacity: 0.1;
-}
-
 .preview-one {
   background-color: #2563eb;
   background-image:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.38) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px);
-  background-size: 34px 34px;
+    radial-gradient(circle at 25% 22%, rgba(255, 255, 255, 0.24), transparent 12%),
+    radial-gradient(circle at 72% 30%, rgba(255, 255, 255, 0.14), transparent 16%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 34px 34px, 34px 34px, 34px 34px, 34px 34px;
+}
+
+.preview-one::before {
+  content: "";
+  position: absolute;
+  inset: 24px 20px auto auto;
+  width: 72px;
+  height: 72px;
+  background: rgba(59, 130, 246, 0.96);
+  border-radius: 22px;
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.24);
+}
+
+.preview-one::after {
+  content: "</>";
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  font-size: 1.55rem;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .preview-two {
@@ -617,10 +647,54 @@ h3 {
     linear-gradient(135deg, #0f172a 0%, #2563eb 58%, #60a5fa 100%);
 }
 
+.preview-two::before {
+  content: "";
+  position: absolute;
+  inset: 18px 18px auto auto;
+  width: 82px;
+  height: 82px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.preview-two::after {
+  content: "↗";
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .preview-three {
   background:
     repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0 12px, transparent 12px 24px),
     #111827;
+}
+
+.preview-three::before {
+  content: "";
+  position: absolute;
+  inset: 22px auto auto 24px;
+  width: 46px;
+  height: 46px;
+  background: rgba(59, 130, 246, 0.16);
+  border-radius: 50%;
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.28);
+}
+
+.preview-three::after {
+  content: "📈";
+  position: absolute;
+  top: 34px;
+  left: 30px;
+  font-size: 1.9rem;
+}
+
+.project-preview {
+  overflow: hidden;
 }
 
 .project-content {
@@ -775,6 +849,15 @@ h3 {
   }
   50% {
     transform: translateX(10px) translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes float-image {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.02) translateY(-10px);
   }
 }
 
