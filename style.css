@@ -399,6 +399,14 @@ h3 {
   font-weight: 800;
 }
 
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(56,189,248,0.18);
+}
+
 .availability {
   display: inline-flex;
   align-items: center;
@@ -465,6 +473,20 @@ h3 {
 .section-heading {
   max-width: 760px;
   margin-bottom: 38px;
+}
+
+#tech .section-heading {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tech .section-heading h2 {
+  background: linear-gradient(90deg, #f8fafc 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .skill-grid,
@@ -663,18 +685,46 @@ h3 {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 18px;
+  margin-top: 28px;
+  justify-content: center;
 }
 
 .tech-pill {
-  padding: 10px 14px;
+  padding: 12px 18px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  border: 1px solid rgba(148,163,184,0.08);
-  color: var(--accent-strong);
+  background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(124,58,237,0.08));
+  border: 1.5px solid rgba(56,189,248,0.24);
+  color: var(--accent-dark);
   font-weight: 800;
   font-size: 0.95rem;
+  transition: all 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(56,189,248,0.08);
 }
+
+.tech-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.tech-pill:hover {
+  transform: translateY(-3px) scale(1.08);
+  border-color: rgba(56,189,248,0.48);
+  background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(124,58,237,0.14));
+  box-shadow: 0 12px 32px rgba(56,189,248,0.16), inset 0 1px 2px rgba(255,255,255,0.12);
+  color: #06b6d4;
+}
+
+.tech-pill:hover::before {
+  opacity: 1;
+}
+
 
 .resume-item h3 {
   display: flex;
@@ -696,11 +746,12 @@ h3 {
   list-style: disc inside;
 }
 
-/* Make resume card responsive */
 @media (max-width: 920px) {
   .resume-card { grid-template-columns: 1fr; }
   .resume-left { order: 2; }
   .resume-right { order: 1; }
+  .tech-grid { justify-content: flex-start; gap: 10px; }
+  .tech-pill { padding: 10px 14px; font-size: 0.88rem; }
 }
 
 .project-date {
