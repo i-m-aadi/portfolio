@@ -2,67 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio website for a web developer showcasing projects, skills, services, and contact information." />
+  <title>Your Name | Web Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Your Name</h1>
-      <nav>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="#home" aria-label="Go to homepage">YN</a>
+      <nav class="main-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="nav-cta" href="#contact">Hire Me</a>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Hi, I'm Your Name</h2>
-      <p>Web Developer | Designer | Creator</p>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am a passionate web developer with experience in building responsive and modern websites. I love turning ideas into reality using code.</p>
-    </div>
-  </section>
-
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Project One</h3>
-          <p>Brief description of project one.</p>
+  <main>
+    <section id="home" class="hero section-band">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Frontend Developer &bull; UI Builder &bull; Problem Solver</p>
+          <h1>Building fast, modern websites that turn ideas into real digital products.</h1>
+          <p class="hero-text">
+            Hi, I am <strong>Your Name</strong>, a web developer focused on responsive interfaces,
+            clean code, and smooth user experiences for businesses, creators, and startups.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn secondary" href="mailto:your.email@example.com">Contact Me</a>
+          </div>
+          <div class="stats" aria-label="Portfolio highlights">
+            <div>
+              <strong>15+</strong>
+              <span>Projects Built</span>
+            </div>
+            <div>
+              <strong>8+</strong>
+              <span>Core Skills</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>Responsive</span>
+            </div>
+          </div>
         </div>
-        <div class="project-card">
-          <h3>Project Two</h3>
-          <p>Brief description of project two.</p>
-        </div>
-        <div class="project-card">
-          <h3>Project Three</h3>
-          <p>Brief description of project three.</p>
+
+        <div class="hero-panel" aria-label="Developer profile preview">
+          <div class="profile-card">
+            <div class="avatar">YN</div>
+            <p class="availability">Available for freelance work</p>
+            <h2>Your Name</h2>
+            <p>Web Developer creating sharp, accessible, and performance-minded websites.</p>
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>React</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-      <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/yourname</a></p>
-    </div>
-  </section>
+    <section id="about" class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">About Me</p>
+          <h2>I design and develop websites with purpose, clarity, and polish.</h2>
+        </div>
+        <div class="section-copy">
+          <p>
+            I enjoy turning concepts into clean, useful web experiences. My work combines
+            frontend development, layout design, responsive styling, and practical problem
+            solving so every page feels good on desktop, tablet, and mobile.
+          </p>
+          <p>
+            I am currently improving my skills in JavaScript, React, performance optimization,
+            and modern UI patterns while building portfolio projects that solve real problems.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <section id="skills" class="section muted">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Skills & Services</p>
+          <h2>What I can build for you</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card">
+            <span>01</span>
+            <h3>Responsive Websites</h3>
+            <p>Mobile-first layouts that look sharp and work smoothly across screen sizes.</p>
+          </article>
+          <article class="skill-card">
+            <span>02</span>
+            <h3>Frontend Development</h3>
+            <p>Clean HTML, CSS, JavaScript, and React components with maintainable structure.</p>
+          </article>
+          <article class="skill-card">
+            <span>03</span>
+            <h3>Landing Pages</h3>
+            <p>Focused pages for products, services, portfolios, events, and personal brands.</p>
+          </article>
+          <article class="skill-card">
+            <span>04</span>
+            <h3>UI Improvements</h3>
+            <p>Better spacing, colors, typography, accessibility, and user flow for existing sites.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Featured Work</p>
+          <h2>Projects that show my development style</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-preview preview-one"></div>
+            <div class="project-content">
+              <p class="project-type">Portfolio Website</p>
+              <h3>Personal Developer Portfolio</h3>
+              <p>A modern portfolio with sections for skills, projects, services, and contact.</p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Responsive</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-preview preview-two"></div>
+            <div class="project-content">
+              <p class="project-type">Business Landing Page</p>
+              <h3>Startup Product Page</h3>
+              <p>A conversion-focused landing page concept with clear sections and call-to-actions.</p>
+              <div class="project-tags">
+                <span>UI Design</span>
+                <span>JavaScript</span>
+                <span>SEO</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-preview preview-three"></div>
+            <div class="project-content">
+              <p class="project-type">Web App UI</p>
+              <h3>Task Dashboard</h3>
+              <p>A clean dashboard interface for tracking tasks, project status, and productivity.</p>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Components</span>
+                <span>UX</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow</p>
+          <h2>How I approach every project</h2>
+        </div>
+        <div class="process-grid">
+          <div>
+            <strong>Discover</strong>
+            <p>Understand the goal, audience, pages, features, and visual direction.</p>
+          </div>
+          <div>
+            <strong>Design</strong>
+            <p>Plan layouts, content hierarchy, spacing, colors, and responsive behavior.</p>
+          </div>
+          <div>
+            <strong>Develop</strong>
+            <p>Build clean pages with readable code, accessibility, and performance in mind.</p>
+          </div>
+          <div>
+            <strong>Launch</strong>
+            <p>Test across devices, polish the details, and prepare the site for sharing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact-card">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Have a website idea? Let us build something great.</h2>
+          <p>
+            I am open to internships, freelance projects, collaborations, and entry-level web
+            development opportunities.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:your.email@example.com">your.email@example.com</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+          <a class="btn secondary" href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub Profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>&copy; 2026 Your Name. All rights reserved.</p>
+      <a href="#home">Back to top</a>
     </div>
   </footer>
 </body>
