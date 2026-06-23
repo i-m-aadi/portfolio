@@ -568,6 +568,20 @@ h3 {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)),
     #2563eb;
+  position: relative;
+  transition: transform 0.28s ease;
+}
+
+.project-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.28), transparent 18%),
+              radial-gradient(circle at 80% 25%, rgba(167, 139, 250, 0.22), transparent 18%),
+              radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.16), transparent 22%);
+  opacity: 0.95;
+  pointer-events: none;
+  animation: glow-move 10s ease-in-out infinite;
 }
 
 .project-preview::after {
@@ -580,6 +594,14 @@ h3 {
     linear-gradient(rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.12)) top left / 56% 12px no-repeat,
     linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08)) 0 38px / 76% 10px no-repeat,
     linear-gradient(rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.1)) 0 66px / 44% 10px no-repeat;
+}
+
+.project-card:hover .project-preview {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.project-card:hover .project-card::before {
+  opacity: 0.1;
 }
 
 .preview-one {
@@ -744,6 +766,15 @@ h3 {
   50% {
     opacity: 0.9;
     transform: scale(1.12);
+  }
+}
+
+@keyframes glow-move {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50% {
+    transform: translateX(10px) translateY(-10px) scale(1.02);
   }
 }
 
